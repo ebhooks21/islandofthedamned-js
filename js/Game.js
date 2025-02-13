@@ -9,6 +9,7 @@ class Game {
 	 */
 	constructor() {
 		let self = this;
+		self.GameState = GameState.MAIM_MENU;
 
 		self.mainMenuController = new MainMenuController();
     }
@@ -19,6 +20,8 @@ class Game {
 	start() {
 		let self =  this;
 
+		//Setup the main menu area and show it
 		(self.mainMenuController).registerOnClickFunctions();
+		(self.mainMenuController).displayMainMenu();
 	}
 }

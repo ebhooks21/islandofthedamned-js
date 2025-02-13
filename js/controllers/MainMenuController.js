@@ -34,4 +34,15 @@ class MainMenuController {
 
 		alert("HERE");
 	}
+
+	/**
+	 * Function to display the main menu.
+	 */
+	displayMainMenu() {
+		//Hide the other areas
+		$('.gamecontentarea').hide();
+
+		//Show the main menu area
+        $('#mainmenuarea').show();
+	}
 }
