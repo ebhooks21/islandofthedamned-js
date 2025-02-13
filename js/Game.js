@@ -11,7 +11,7 @@ class Game {
 		let self = this;
 		self.GameState = GameState.MAIM_MENU;
 
-		self.mainMenuController = new MainMenuController();
+		self.mainMenuController = new MainMenuController(self);
     }
 
 	/**
@@ -24,4 +24,13 @@ class Game {
 		(self.mainMenuController).registerOnClickFunctions();
 		(self.mainMenuController).displayMainMenu();
 	}
+
+	/**
+	 * Function to hide all game content areas.
+	 */
+	hideAllGameContentAreas() {
+        let self = this;
+
+		$('.gamecontentarea').hide();
+    }
 }

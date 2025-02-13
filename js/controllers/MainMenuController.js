@@ -7,7 +7,9 @@ class MainMenuController {
 	/**
 	 * Constructor for the MainMenu.
 	 */
-	constructor() {
+	constructor(game) {
+		let self = this;
+		self.game = game;
     }
 
 	/**
@@ -39,8 +41,10 @@ class MainMenuController {
 	 * Function to display the main menu.
 	 */
 	displayMainMenu() {
+		let self = this;
+
 		//Hide the other areas
-		$('.gamecontentarea').hide();
+		self.hideAllGameContentAreas();
 
 		//Show the main menu area
         $('#mainmenuarea').show();
