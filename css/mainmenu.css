@@ -1,6 +1,17 @@
 img.mainmenucontainer-logo {
-	height: 40%;
+	display: block;
+	height: 30%;
 	margin: 20px auto;
 	padding: 0 0;
 	width: 20%;
 }
+
+div.mainmenucontainer-buttonarea {
+	display: block;
+	margin: 0  auto;
+	padding: 0 0;
+}
+	div.mainmenucontainer-buttonarea button {
+		display: block;
+		margin: 0 auto;
+	}
