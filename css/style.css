@@ -1,0 +1,22 @@
+body {
+	background-color: black;
+	display: block;
+	height: 100vh !important;
+	margin: 0 auto;
+	overflow: hidden !important;
+	padding: 0 0;
+	width: 100vw !important;
+}
+
+.rounded-container {
+	border: 1px solid black;
+	border-color: transparent !important;
+	border-radius: 12px;
+}
+
+div.maincontainer {
+	display: block;
+	height: 95vh !important;
+	margin-top: 3vh;
+	width: 100vw !important;
+}
