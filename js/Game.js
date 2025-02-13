@@ -26,6 +26,13 @@ class Game {
 	}
 
 	/**
+	 * Function for when the game state changes.
+	 */
+	stateChanged() {
+
+	}
+
+	/**
 	 * Function to hide all game content areas.
 	 */
 	hideAllGameContentAreas() {

@@ -5,4 +5,5 @@
 
 class GameState {
 	static MAIM_MENU = 0;
+	static NEW_CHARACTER = 1;
 }

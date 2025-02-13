@@ -34,7 +34,12 @@ class MainMenuController {
 	newGameButtonOnClick() {
 		let self = this;
 
-		alert("HERE");
+		//Hide the main menu area
+		self.hideMainMenuArea();
+
+		//Swap states and alert the game object
+		(self.game).GameState = GameState.NEW_CHARACTER;
+		(self.game).stateChanged();
 	}
 
 	/**
@@ -48,5 +53,15 @@ class MainMenuController {
 
 		//Show the main menu area
         $('#mainmenuarea').show();
+	}
+
+	/**
+	 * Function to hide the main menu area
+	 */
+	hideMainMenuArea() {
+		let self = this;
+
+		$('#mainmenuarea').hide();
+		self.unregisterOnClickFunctions();
 	}
 }
