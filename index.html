@@ -8,7 +8,17 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<link href="css/mainmenu.css" rel="stylesheet" />
+
+		<!-- Javascript -->
+		<!-- 3rd Party Libraries -->
 		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/jquery-3.7.1.min.js"></script>
+
+		<!-- Controllers -->
+		<script src="js/controllers/MainMenuController.js"></script>
+
+		<!-- Game class -->
+		<script src="js/Game.js"></script>
 	</head>
 
 	<body>
@@ -19,9 +29,16 @@
 				</div>
 
 				<div class="col-6 mt-5 mainmenucontainer-buttonarea" id="">
-					<button class="btn btn-lg btn-primary col-9">New Game</button>
+					<button class="btn btn-lg btn-primary col-9 mainmenu-button" id="mainmenu-newgamebutton">New Game</button>
 				</div>
 			</div>
 		</div>
 	</body>
+
+	<script type="text/javascript">
+		//Start the game
+		let game = new Game();
+
+		game.start();
+	</script>
 </html>

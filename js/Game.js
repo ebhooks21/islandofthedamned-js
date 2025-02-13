@@ -17,6 +17,8 @@ class Game {
 	 * Function to start the Game.
 	 */
 	start() {
+		let self =  this;
 
+		(self.mainMenuController).registerOnClickFunctions();
 	}
 }

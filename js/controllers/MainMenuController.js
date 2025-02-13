@@ -13,14 +13,25 @@ class MainMenuController {
 	/**
 	 * Function to register the onclick functions for this controller.
 	 */
-	registerOnClickFunction() {
-
+	registerOnClickFunctions() {
+		$('#mainmenu-newgamebutton').on('click', () => {
+			this.newGameButtonOnClick();
+		});
 	}
+
+	/**
+	 * Function to unregister the onclick functions for this controller.
+	 */
+	unregisterOnClickFunctions() {
+        $('.mainmenu-button').off('click');
+    }
 
 	/**
 	 * Function for the New Game Button onclick.
 	 */
 	newGameButtonOnClick() {
+		let self = this;
+
 		alert("HERE");
 	}
 }
