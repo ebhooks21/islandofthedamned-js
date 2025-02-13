@@ -11,7 +11,11 @@ class Game {
 		let self = this;
 		self.GameState = GameState.MAIM_MENU;
 
+		//Hide all the game content areas
+		self.hideAllGameContentAreas();
+
 		self.mainMenuController = new MainMenuController(self);
+		self.newCharacterController = new NewCharacterController(self);
     }
 
 	/**
@@ -20,16 +24,27 @@ class Game {
 	start() {
 		let self =  this;
 
-		//Setup the main menu area and show it
-		(self.mainMenuController).registerOnClickFunctions();
-		(self.mainMenuController).displayMainMenu();
+		self.stateChanged();	
 	}
 
 	/**
 	 * Function for when the game state changes.
 	 */
 	stateChanged() {
+		let self = this;
 
+		//Check the state and call the appropriate controller
+		switch(self.GameState) {
+			case GameState.MAIM_MENU:
+				(self.mainMenuController).registerOnClickFunctions();
+                (self.mainMenuController).displayMainMenu();
+                break;
+
+			case GameState.NEW_CHARACTER:
+                (self.newCharacterController).registerOnClickFunctions();
+                (self.newCharacterController).displayNewCharacterArea();
+                break;
+		}
 	}
 
 	/**

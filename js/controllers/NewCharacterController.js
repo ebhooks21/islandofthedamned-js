@@ -1,11 +1,11 @@
 /**
- * MainMenuController.js -- File to hold the main menu controller.
+ * NewCharacterController.js -- File to hold the new character controller.
  * @author Eric Hooks, 2025
  */
 
-class MainMenuController {
+class NewCharacterController {
 	/**
-	 * Constructor for the MainMenu.
+	 * Constructor for the NewCharacterController.
 	 */
 	constructor(game) {
 		let self = this;
@@ -16,16 +16,16 @@ class MainMenuController {
 	 * Function to register the onclick functions for this controller.
 	 */
 	registerOnClickFunctions() {
-		$('#mainmenu-newgamebutton').on('click', () => {
+		/*$('#mainmenu-newgamebutton').on('click', () => {
 			this.newGameButtonOnClick();
-		});
+		});*/
 	}
 
 	/**
 	 * Function to unregister the onclick functions for this controller.
 	 */
 	unregisterOnClickFunctions() {
-        $('.mainmenu-button').off('click');
+        //$('.mainmenu-button').off('click');
     }
 
 	/**
@@ -35,7 +35,7 @@ class MainMenuController {
 		let self = this;
 
 		//Hide the main menu area
-		self.hideMainMenuArea();
+		(self.game).hideNewCharacterArea();
 
 		//Swap states and alert the game object
 		(self.game).GameState = GameState.NEW_CHARACTER;
@@ -43,25 +43,25 @@ class MainMenuController {
 	}
 
 	/**
-	 * Function to display the main menu.
+	 * Function to display the new character area.
 	 */
-	displayMainMenu() {
+	displayNewCharacterArea() {
 		let self = this;
 
 		//Hide the other areas
 		(self.game).hideAllGameContentAreas();
 
 		//Show the main menu area
-        $('#mainmenuarea').show();
+        $('#newcharacterarea').show();
 	}
 
 	/**
 	 * Function to hide the main menu area
 	 */
-	hideMainMenuArea() {
+	hideNewCharacterArea() {
 		let self = this;
 
-		$('#mainmenuarea').hide();
+		$('#newcharacterarea').hide();
 		self.unregisterOnClickFunctions();
 	}
 }
