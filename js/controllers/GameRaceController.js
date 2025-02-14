@@ -40,5 +40,10 @@ class GameRaceController {
 
 		tempStatBlock = new StatBlock(4, 6, 8, 5, 3, 4);
         tempRace = new Race("Elf", "Elves are creatures of the woods, often seen as wise and strong. They are known for their ability to communicate with other creatures, including humans, through the magic of their elven language. They are also known for their love of the forest and its natural beauty.", tempStatBlock);
+
+		(self.races).push(tempRace);
+
+		tempStatBlock = null;
+        tempRace = null;
 	}
 }
