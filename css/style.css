@@ -20,3 +20,9 @@ div.maincontainer {
 	margin-top: 3vh;
 	width: 100vw !important;
 }
+
+div.centeredform {
+	display: block;
+    margin: 0 auto;
+    padding: 0 0;
+}
