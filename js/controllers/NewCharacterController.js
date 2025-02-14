@@ -79,13 +79,22 @@ class NewCharacterController {
 				state = "";
 			}
 
-			html += "<input class='form-check-input' type='radio' name='newcharacterform-raceradio' id='newcharacterform-" + races[r].name + "=raceradiooption' " + state + ">";
-			html += "<label class='form-check-label' for='newcharacterform-'" + races[r].name + "=raceradiooption'>" + races[r].name + "</label>";
+			html += "<input class='form-check-input' type='radio' name='newcharacterform-raceradio' id='newcharacterform-" + races[r].name + "-raceradiooption' " + state + ">";
+			html += "<label class='form-check-label' for='newcharacterform-" + races[r].name + "-raceradiooption'>" + races[r].name + "</label>";	
 
 			html += "</div>";
 		}
 
-		$("#newcharacterform-racelistingarea").html(html);
+		$('#newcharacterform-racelistingarea').html(html);
+
+		for(let r in races) {
+			//Set an onclick for each radio button, so that it updates the description area
+			$("#newcharacterform-" + races[r].name + "-raceradiooption").on('click', () => {
+				$('#newcharacterform-descriptiontitle').html(races[r].name);
+				$('#newcharacterform-descriptiontext').html(races[r].description);
+            });
+		}
+		$('#newcharacterform-Human-raceradiooption').trigger('click');
 	}
 
 	/**
