@@ -7,21 +7,7 @@ class StatBlock {
 	/**
 	 * Main constructor for the StatBlock class.
 	 */
-	constructor() {
-		let self = this;
-
-        self.strength = 0;
-        self.agility = 0;
-        self.intelligence = 0;
-        self.charisma = 0;
-        self.constitution = 0;
-        self.luck = 0;
-	}
-
-	/**
-	 * Secondary constructor for the StatBlock class.
-	 */
-	constructor(strength, agility, intelligence, charisma, constitution, luck) {
+	constructor(strength = 0, agility = 0, intelligence = 0, charisma = 0, constitution = 0, luck = 0) {
 		let self = this;
 
 		self.strength = strength;
