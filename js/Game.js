@@ -16,6 +16,7 @@ class Game {
 
 		self.mainMenuController = new MainMenuController(self);
 		self.newCharacterController = new NewCharacterController(self);
+		self.gameRaceController = new GameRaceController(self);
     }
 
 	/**
