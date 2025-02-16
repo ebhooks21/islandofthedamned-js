@@ -69,7 +69,7 @@ class NewCharacterController {
 		let races = ((self.game).gameRaceController).races;
 
 		for(let r in races) {
-			html += "<div class='form-check'>";
+			html += "<span class='form-check float-lg-start me-lg-4'>";
 
 			if(races[r].name == "Human") {
 				state = "checked";
@@ -82,7 +82,7 @@ class NewCharacterController {
 			html += "<input class='form-check-input' type='radio' name='newcharacterform-raceradio' id='newcharacterform-" + races[r].name + "-raceradiooption' " + state + ">";
 			html += "<label class='form-check-label' for='newcharacterform-" + races[r].name + "-raceradiooption'>" + races[r].name + "</label>";	
 
-			html += "</div>";
+			html += "</span>";
 		}
 
 		$('#newcharacterform-racelistingarea').html(html);
