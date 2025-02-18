@@ -58,6 +58,33 @@ class NewCharacterController {
         self.buildCharacterRaceSelectionArea();
     }
 
+	/**
+	 * Function to build the character stats area.
+	 */
+	buildCharacterStatsArea() {
+		let self = this;
+
+		//Get the character's currently selected race
+		let race = self.getSelectedCharacterRace();
+
+		console.log(race);
+	}
+
+	/**
+	 * Function to get the selected character race.
+	 */
+	getSelectedCharacterRace() {
+		let self = this;
+		
+		let races = ((self.game).gameRaceController).races;
+
+		for(let r in races) {
+			if($('#newcharacterform-' + races[r].name + '-raceradiooption').is(':checked')) {
+				return races[r];
+			}
+		}
+	}
+
     /**
      * Function to build the character race selection area.
      */
@@ -92,6 +119,9 @@ class NewCharacterController {
 			$("#newcharacterform-" + races[r].name + "-raceradiooption").on('click', () => {
 				$('#newcharacterform-descriptiontitle').html(races[r].name);
 				$('#newcharacterform-descriptiontext').html(races[r].description);
+
+				//Change the character stats area
+				self.buildCharacterStatsArea();
             });
 		}
 		$('#newcharacterform-Human-raceradiooption').trigger('click');
