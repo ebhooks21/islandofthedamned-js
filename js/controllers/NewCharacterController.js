@@ -68,6 +68,25 @@ class NewCharacterController {
 		let race = self.getSelectedCharacterRace();
 
 		console.log(race);
+
+        //Update the character stats area with the selected race's stats block
+		let baseStatBlock = new StatBlock(5, 5, 5, 5, 5, 5,);	
+
+		//Update the base stat block with the race stat information
+		baseStatBlock.strength += (race.statblock).strength;
+		baseStatBlock.agility += (race.statblock).agility;
+		baseStatBlock.intelligence += (race.statblock).intelligence;
+		baseStatBlock.charisma += (race.statblock).charisma;
+		baseStatBlock.constitution += (race.statblock).constitution;
+		baseStatBlock.luck += (race.statblock).luck;
+
+		//Update the stat display
+		$('#newcharacterarea-statsarea-strength').val(baseStatBlock.strength);
+        $('#newcharacterarea-statsarea-agility').val(baseStatBlock.agility);
+        $('#newcharacterarea-statsarea-intelligence').val(baseStatBlock.intelligence);
+        $('#newcharacterarea-statsarea-charisma').val(baseStatBlock.charisma);
+        $('#newcharacterarea-statsarea-constitution').val(baseStatBlock.constitution);
+        $('#newcharacterarea-statsarea-luck').val(baseStatBlock.luck);
 	}
 
 	/**
